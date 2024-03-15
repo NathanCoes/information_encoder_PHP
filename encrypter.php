@@ -1,25 +1,25 @@
 <?php
 
-    //Incluir el encrypter.php en donde sea necesario.
-    //Haga el llamado de sus funciones de la siguiente manera:
+    //Include the encrypter.php where necessary.
+    //Call your functions as follows:
 
-    //El objetivo del KEY es mantener una llave dinamica para todos los usuarios.
+    //The objective of the KEY is to maintain a dynamic key for all users.
 
-    //Para incriptar información: Encrypter::encrypt($string);
-    //Para desencriptar información: Encrypter::decrypt($string);
+    //To encrypt information: Encrypter::encrypt($string);
+    //To decrypt information: Encrypter::decrypt($string);
 
     define('METHOD' , 'AES-256-CBC');
 
     class Encrypter {
     
-        // Llaves de encriptación
+        // Encryption keys, modify it with strings of the same length but generated at random.
         const KEY = 'XrU<{W~},@7Jb>y';
         const IV = 'ULD@Js!M9WEu8=GULD@Js!M9WE';
         
         /**
-         * Encripta un string utilizando AES-256 en modo CBC
-         * @param string $string El string a encriptar
-         * @return string El string encriptado en formato base64
+         * Encrypts a string using AES-256 in CBC mode
+         * @param string $string The string to encrypt
+         * @return string The encrypted string in base64 format
          */
         public static function encrypt($string) {
             $key = hash('sha256', self::KEY, true);
@@ -29,10 +29,10 @@
         }
         
         /**
-         * Desencripta un string previamente encriptado con la función encrypt()
-         * @param string $string El string encriptado en formato base64
-         * @return string|false El string original desencriptado o FALSE si no se puede desencriptar
-         */
+         * Decrypt a previously encrypted string with the encrypt() function
+         * @param string $string The encrypted string in base64 format
+         * @return string|false The original decrypted string or FALSE if it cannot be decrypted
+        */
         public static function decrypt($string) {
             $key = hash('sha256', self::KEY, true);
             $data = base64_decode($string);
