@@ -16,7 +16,7 @@ El código proporcionado es un ejemplo de una clase Encrypter que utiliza el alg
 - Genera un vector de inicialización (IV) válido para el algoritmo y de la longitud adecuada.
 - Utiliza la función openssl_encrypt para cifrar la cadena de texto con la clave y el vector de inicialización generados.
 - Devuelve la cadena encriptada en formato base64.
-- 
+
 **Función decrypt($string):**
 
 - Esta función toma una cadena encriptada en formato base64 como entrada y la desencripta utilizando el algoritmo AES-256 en modo CBC.
@@ -29,9 +29,13 @@ En resumen, este código proporciona una manera segura de encriptar y desencript
 En la carpeta *Example* encontrarás una actividad demostrativa
 
 Integre el **encrypter.php** en su proyecto y accesa a sus dos funciones:
-> Encrypter::encrypt($string)
+```
+  Encrypter::encrypt($string)
+```
 y
-> Encrypter::decrypt($string)
+```
+  Encrypter::decrypt($string)
+```
 
 Lo demás queda a su imaginación.
 
