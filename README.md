@@ -28,8 +28,12 @@ El código proporcionado es un ejemplo de una clase Encrypter que utiliza el alg
 En resumen, este código proporciona una manera segura de encriptar y desencriptar información utilizando el algoritmo AES-256 en modo CBC, lo que garantiza un alto nivel de seguridad y confidencialidad de los datos. 
 En la carpeta *Example* encontrarás una actividad demostrativa
 
+Integre el **encrypter.php** en su proyecto y accesa a sus dos funciones:
 > Encrypter::encrypt($string)
+y
 > Encrypter::decrypt($string)
+
+Lo demás queda a su imaginación.
 
 
 
